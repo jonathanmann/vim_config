@@ -1,7 +1,8 @@
 " size of a hard tabstop
+filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+set expandtab
 
 " add line numbers
 set number
@@ -11,15 +12,13 @@ syntax enable
 set background=dark 
 colorscheme solarized
 
-"highlight LineNr ctermfg=grey
-"highlight NonText ctermfg=12
-"highlight Comment ctermfg=12
-
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-imap ;; <Esc>
+imap ` <Esc>
+
+" add standard copy paste keys
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
