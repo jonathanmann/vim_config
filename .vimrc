@@ -8,7 +8,8 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'nanotech/jellybeans.vim'
+"Plugin 'vim-scripts/twilight256.vim'
+Plugin 'vim-scripts/closetag.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -21,7 +22,7 @@ set expandtab
 set number
 
 " set color scheme
-set t_Co=256
+
 syntax enable
 if has('gui_running')
     " GUI colors
@@ -29,9 +30,11 @@ if has('gui_running')
     colorscheme solarized
 else
     " Non-GUI (terminal) colors
-    hi Normal ctermbg=none
-    highlight NonText ctermbg=none
-    colorscheme tomorrownighteighties
+    set t_Co=256
+    "colorscheme tomorrownighteighties
+    "colorscheme twilight256 
+    colorscheme spacegray 
+   
 endif
 
 set guioptions-=T  "remove toolbar
