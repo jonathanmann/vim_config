@@ -6,8 +6,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nanotech/jellybeans.vim'
@@ -25,12 +23,14 @@ set number
 " set color scheme
 set t_Co=256
 syntax enable
-set background=dark 
 if has('gui_running')
     " GUI colors
+    set background=dark 
     colorscheme solarized
 else
     " Non-GUI (terminal) colors
+    hi Normal ctermbg=none
+    highlight NonText ctermbg=none
     colorscheme tomorrownighteighties
 endif
 

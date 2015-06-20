@@ -5,7 +5,7 @@
 
 " Default GUI Colours
 let s:foreground = "cccccc"
-let s:background = "2d2d2d"
+let s:background = ""
 let s:selection = "515151"
 let s:line = "393939"
 let s:comment = "999999"
@@ -486,5 +486,5 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	delf <SID>grey_number
 endif
 
-set background=dark
+"set background=dark
 
