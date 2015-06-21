@@ -10,6 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'vim-scripts/twilight256.vim'
 Plugin 'vim-scripts/closetag.vim'
+Plugin 'Townk/vim-autoclose'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
