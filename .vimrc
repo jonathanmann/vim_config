@@ -9,8 +9,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'vim-scripts/twilight256.vim'
-Plugin 'vim-scripts/closetag.vim'
+"Plugin 'vim-scripts/closetag.vim'
 Plugin 'Townk/vim-autoclose'
+Plugin 'powerline/powerline'
+Plugin 'vim-scripts/candyman.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,7 +37,7 @@ else
     "colorscheme tomorrownighteighties
     "colorscheme twilight256 
     colorscheme spacegray 
-   
+    "colorscheme candyman  
 endif
 
 set guioptions-=T  "remove toolbar
@@ -48,10 +50,14 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
+if has("autocmd")
+    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
+endif
+
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
 " Remap upper case command to lower case command
-command WQ wq
-command Wq wq
-command W w
-command Q q 
+"command WQ wq
+"command Wq wq
+"command W w
+"command Q q 
