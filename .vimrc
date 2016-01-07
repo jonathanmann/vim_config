@@ -58,3 +58,11 @@ nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
 " Remap upper case command to lower case command
 "command Wq wq
+
+" Tab navigation like Firefox.
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
