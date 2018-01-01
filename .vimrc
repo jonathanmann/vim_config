@@ -12,7 +12,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'derekwyatt/vim-scala'
 "Plugin 'vim-scripts/dbext.vim'
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "Bundle 'jistr/vim-nerdtree-tabs'
 
 " All of your Plugins must be added before the following line
@@ -26,7 +26,7 @@ set expandtab
 " Set Airline Config Options
 let g:airline_theme="luna"
 "let g:airline_theme="deus"
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 "let g:airline_left_sep='›'  " Slightly fancier than '>'
 "let g:airline_right_sep='‹' " Slightly fancier than '<'
@@ -75,18 +75,20 @@ if has("autocmd")
     autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
     autocmd FileType scheme nnoremap <buffer> <F9> :exec '!scheme < ' shellescape(@%, 1)<cr>
 endif
-"let NERDTreeChDirMode=2
+
+let NERDTreeChDirMode=2
 "nnoremap <leader>n :NERDTree .<CR>
 "map <Leader>n <plug>NERDTreeTabsToggle<CR>
+nmap <F6> :NERDTreeToggle<CR>
 
 
 " Remap upper case command to lower case command
 "command Wq wq
 
 " Tab navigation like Firefox.
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+map <C-h> :bprev<CR>
+map <C-l> :bnext<CR>
+map <C-t> :bnew<CR>
+"inoremap <C-h> <Esc>:tabprevious<CR>
+"inoremap <C-l> <Esc>:tabnext<CR>
+"inoremap <C-t> <Esc>:tabnew<CR>
