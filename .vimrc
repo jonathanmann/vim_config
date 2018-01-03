@@ -13,9 +13,8 @@ Plugin 'tpope/vim-fugitive'
 "Plugin 'derekwyatt/vim-scala'
 "Plugin 'vim-scripts/dbext.vim'
 Plugin 'scrooloose/nerdtree'
-"Bundle 'jistr/vim-nerdtree-tabs'
-
-" All of your Plugins must be added before the following line
+Plugin 'morhetz/gruvbox'
+Plugin 'sickill/vim-monokai'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -24,22 +23,20 @@ set shiftwidth=4
 set expandtab
 
 " Set Airline Config Options
-let g:airline_theme="luna"
-"let g:airline_theme="deus"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-"let g:airline_left_sep='›'  " Slightly fancier than '>'
-"let g:airline_right_sep='‹' " Slightly fancier than '<'
 if !exists('g:aireline_symbols')
     let g:airline_symbols = {}
 endif
+"let g:airline_theme="deus"
 let g:airline_symbols.space = "\ua0"
+
+" Always show statusline
+set laststatus=2
 
 " add line numbers
 set number
 
-" Always show statusline
-set laststatus=2
 
 " set color scheme
 syntax enable
@@ -50,17 +47,19 @@ if has('gui_running')
     let g:airline_theme="luna"
     let g:airline_solarized_bg="dark"
     let g:airline_powerline_fonts = 0
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
 else
     " Non-GUI (terminal) colors
     set t_Co=256
-    colorscheme spacegray 
+    colorscheme spacegray
+    set background=dark 
+    let g:airline_theme="gruvbox"
+    colorscheme gruvbox 
 endif
 
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-
-" add standard copy paste keys
+" Add standard copy paste keys
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
@@ -71,24 +70,23 @@ set autochdir
 if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
     autocmd BufEnter * silent! lcd %:p:h
+    autocmd FileType python colorscheme spacegray
+    autocmd FileType python let g:airline_theme="luna"
+    autocmd FileType ruby colorscheme monokai
+    autocmd FileType ruby let g:airline_theme="deus"
     " run script by pressing <F9>
     autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
     autocmd FileType scheme nnoremap <buffer> <F9> :exec '!scheme < ' shellescape(@%, 1)<cr>
 endif
 
+" NERDTree Configuration
 let NERDTreeChDirMode=2
-"nnoremap <leader>n :NERDTree .<CR>
-"map <Leader>n <plug>NERDTreeTabsToggle<CR>
 nmap <F6> :NERDTreeToggle<CR>
-
 
 " Remap upper case command to lower case command
 "command Wq wq
 
-" Tab navigation like Firefox.
+" Buffer navigation
 map <C-h> :bprev<CR>
 map <C-l> :bnext<CR>
 map <C-t> :bnew<CR>
-"inoremap <C-h> <Esc>:tabprevious<CR>
-"inoremap <C-l> <Esc>:tabnext<CR>
-"inoremap <C-t> <Esc>:tabnew<CR>
