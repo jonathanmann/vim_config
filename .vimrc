@@ -10,6 +10,7 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'vim-scripts/dbext.vim'
+Plugin 'marcopaganini/termschool-vim-theme'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'sickill/vim-monokai'
@@ -51,8 +52,10 @@ else
     if has("autocmd")
         autocmd FileType python colorscheme spacegray
         autocmd FileType python let g:airline_theme="luna"
-        autocmd FileType ruby colorscheme monokai
+        autocmd FileType ruby colorscheme termschool
         autocmd FileType ruby let g:airline_theme="deus"
+        autocmd FileType haskell colorscheme monokai
+        autocmd FileType haskell let g:airline_theme="gruvbox"
     endif
 endif
 
