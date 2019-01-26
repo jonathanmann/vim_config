@@ -51,9 +51,13 @@ else
     colorscheme gruvbox 
     if has("autocmd")
         autocmd FileType python colorscheme spacegray
+        "autocmd FileType python let g:airline_theme="deus"
+        "autocmd FileType python colorscheme monokai
         autocmd FileType python let g:airline_theme="luna"
         autocmd FileType ruby colorscheme termschool
         autocmd FileType ruby let g:airline_theme="deus"
+        " autocmd FileType javascript colorscheme spacegray
+        " autocmd FileType javascript let g:airline_theme="luna"
         autocmd FileType haskell colorscheme monokai
         autocmd FileType haskell let g:airline_theme="gruvbox"
     endif
@@ -74,7 +78,9 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
     autocmd BufEnter * silent! lcd %:p:h
     autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+    autocmd FileType cpp nnoremap <buffer> <F9> :!g++ -std=c++11 % -Wall -g -o %.out && ./%.out<cr>
     autocmd FileType scheme nnoremap <buffer> <F9> :exec '!scheme < ' shellescape(@%, 1)<cr>
+    autocmd FileType haskell nnoremap <buffer> <F9> :exec '!time stack runghc ' shellescape(@%, 1)<cr>
 endif
 
 " NERDTree Configuration
