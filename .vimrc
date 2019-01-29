@@ -92,6 +92,14 @@ au BufNewFile *.py 0r ~/.vim/config/py_header.txt
 au BufNewFile *.py exe "%s/{{REPLACE_AUTHOR}}/" .AUTHOR
 au BufNewFile *.py exe "%s/{{REPLACE_EMAIL}}/" .EMAIL
 
+au BufNewFile *.cpp 0r ~/.vim/config/cpp_starter.txt
+au BufNewFile *.cpp exe "%s/{{REPLACE_FILENAME}}/" expand('%:t')
+au BufNewFile *.cpp exe "%s/{{REPLACE_AUTHOR}}/" .AUTHOR
+au BufNewFile *.cpp exe "%s/{{REPLACE_EMAIL}}/" .EMAIL
+au BufNewFile *.cpp exe "%s/^Created:.*/Created: " .strftime("%Y-%m-%d %H:%M:%S")
+au BufWritePre *.cpp exe "%s/^Updated:.*/Updated: " .strftime("%Y-%m-%d %H:%M:%S")
+"au BufWritePost *.cpp ''
+
 " Buffer navigation
 map <C-h> :bprev<CR>
 map <C-l> :bnext<CR>

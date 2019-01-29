@@ -1,2 +1,2 @@
 let AUTHOR = "Jonathan Mann"
-let EMAIL = "jonathan.william.mann@gmail.com"
+let EMAIL = "jm8172@nyu.edu"
