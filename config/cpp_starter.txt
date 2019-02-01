@@ -1,4 +1,4 @@
-/*******************************
+/******************************
 File Name:{{REPLACE_FILENAME}}
 Author: {{REPLACE_AUTHOR}}
 Email Address: {{REPLACE_EMAIL}}
@@ -6,7 +6,7 @@ Created:
 Updated:
 Assignment:
 Description:
-*******************************/
+******************************/
 
 #include <iostream>
 using namespace std;

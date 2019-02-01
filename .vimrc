@@ -98,7 +98,7 @@ au BufNewFile *.cpp exe "%s/{{REPLACE_AUTHOR}}/" .AUTHOR
 au BufNewFile *.cpp exe "%s/{{REPLACE_EMAIL}}/" .EMAIL
 au BufNewFile *.cpp exe "%s/^Created:.*/Created: " .strftime("%Y-%m-%d %H:%M:%S")
 au BufWritePre *.cpp exe "%s/^Updated:.*/Updated: " .strftime("%Y-%m-%d %H:%M:%S")
-"au BufWritePost *.cpp ''
+au BufWritePost *.cpp ''
 
 " Buffer navigation
 map <C-h> :bprev<CR>
