@@ -81,6 +81,7 @@ if has("autocmd")
     autocmd FileType cpp nnoremap <buffer> <F9> :!g++ -std=c++11 % -Wall -g -o %.out && ./%.out<cr>
     autocmd FileType scheme nnoremap <buffer> <F9> :exec '!scheme < ' shellescape(@%, 1)<cr>
     autocmd FileType haskell nnoremap <buffer> <F9> :exec '!time stack runghc ' shellescape(@%, 1)<cr>
+    autocmd FileType tex nnoremap <buffer> <F9> :exec '!pdflatex' shellescape(@%, 1)<cr>
 endif
 
 " NERDTree Configuration
