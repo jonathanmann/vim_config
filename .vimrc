@@ -50,10 +50,10 @@ else
     let g:airline_theme="gruvbox"
     colorscheme gruvbox 
     if has("autocmd")
-        autocmd FileType python colorscheme spacegray
+        "autocmd FileType python colorscheme spacegray
         "autocmd FileType python let g:airline_theme="deus"
         "autocmd FileType python colorscheme monokai
-        autocmd FileType python let g:airline_theme="luna"
+        "autocmd FileType python let g:airline_theme="luna"
         autocmd FileType ruby colorscheme termschool
         autocmd FileType ruby let g:airline_theme="deus"
         " autocmd FileType javascript colorscheme spacegray
@@ -79,9 +79,11 @@ if has("autocmd")
     autocmd BufEnter * silent! lcd %:p:h
     autocmd FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
     autocmd FileType cpp nnoremap <buffer> <F9> :!g++ -std=c++11 % -Wall -g -o %.out && ./%.out<cr>
+    autocmd FileType c nnoremap <buffer> <F9> :!gcc % -o %.out && ./%.out<cr>
     autocmd FileType scheme nnoremap <buffer> <F9> :exec '!scheme < ' shellescape(@%, 1)<cr>
     autocmd FileType haskell nnoremap <buffer> <F9> :exec '!time stack runghc ' shellescape(@%, 1)<cr>
     autocmd FileType tex nnoremap <buffer> <F9> :exec '!pdflatex' shellescape(@%, 1)<cr>
+    autocmd BufRead,BufNewFile *.r2py set filetype=python
 endif
 
 " NERDTree Configuration
@@ -90,8 +92,8 @@ nmap <F6> :NERDTreeToggle<CR>
 
 source ~/.vim/config/config.vim
 au BufNewFile *.py 0r ~/.vim/config/py_header.txt
-au BufNewFile *.py exe "%s/{{REPLACE_AUTHOR}}/" .AUTHOR
-au BufNewFile *.py exe "%s/{{REPLACE_EMAIL}}/" .EMAIL
+"au BufNewFile *.py exe "%s/{{REPLACE_AUTHOR}}/" .AUTHOR
+"au BufNewFile *.py exe "%s/{{REPLACE_EMAIL}}/" .EMAIL
 
 au BufNewFile *.cpp 0r ~/.vim/config/cpp_starter.txt
 au BufNewFile *.cpp exe "%s/{{REPLACE_FILENAME}}/" expand('%:t')
@@ -100,6 +102,8 @@ au BufNewFile *.cpp exe "%s/{{REPLACE_EMAIL}}/" .EMAIL
 au BufNewFile *.cpp exe "%s/^Created:.*/Created: " .strftime("%Y-%m-%d %H:%M:%S")
 au BufWritePre *.cpp exe "%s/^Updated:.*/Updated: " .strftime("%Y-%m-%d %H:%M:%S")
 au BufWritePost *.cpp ''
+
+au BufNewFile *.tex 0r ~/.vim/config/tex_starter.txt
 
 " Buffer navigation
 map <C-h> :bprev<CR>

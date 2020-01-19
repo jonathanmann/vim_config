@@ -1,0 +1,7 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[left=2.2cm, right=2.2cm]{geometry}
+\begin{document}
+\setlength{\parindent}{0cm}
+\addtolength{\topmargin}{-1cm}
+
+\end{document}
