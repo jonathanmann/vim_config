@@ -103,6 +103,14 @@ au BufNewFile *.cpp exe "%s/^Created:.*/Created: " .strftime("%Y-%m-%d %H:%M:%S"
 au BufWritePre *.cpp exe "%s/^Updated:.*/Updated: " .strftime("%Y-%m-%d %H:%M:%S")
 au BufWritePost *.cpp ''
 
+au BufNewFile *.c 0r ~/.vim/config/c_starter.txt
+au BufNewFile *.c exe "%s/{{REPLACE_FILENAME}}/" expand('%:t')
+au BufNewFile *.c exe "%s/{{REPLACE_AUTHOR}}/" .AUTHOR
+au BufNewFile *.c exe "%s/{{REPLACE_EMAIL}}/" .EMAIL
+au BufNewFile *.c exe "%s/^Created:.*/Created: " .strftime("%Y-%m-%d %H:%M:%S")
+au BufWritePre *.c exe "%s/^Updated:.*/Updated: " .strftime("%Y-%m-%d %H:%M:%S")
+au BufWritePost *.c ''
+
 au BufNewFile *.tex 0r ~/.vim/config/tex_starter.txt
 
 " Buffer navigation

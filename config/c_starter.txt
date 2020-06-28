@@ -1,0 +1,16 @@
+/******************************
+File Name:{{REPLACE_FILENAME}}
+Author: {{REPLACE_AUTHOR}}
+Email Address: {{REPLACE_EMAIL}}
+Created:
+Updated:
+Assignment:
+Description:
+******************************/
+
+#include <stdio.h>
+
+int main()
+{
+    return 0;
+}
